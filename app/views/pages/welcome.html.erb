@@ -1,2 +1,12 @@
-<h1>Pages#welcome</h1>
-<p>Bicycle rights banh mi you probably haven't heard of them pork belly, banjo 8-bit Shoreditch gluten-free sartorial leggings blog locavore flexitarian brunch Bushwick. Selfies trust fund craft beer cray. Next level keytar before they sold out Williamsburg normcore pickled selvage, sriracha 90's McSweeney's lomo cred ethical cray Pinterest. Portland hashtag messenger bag photo booth, crucifix wayfarers Shoreditch umami Austin. Tattooed PBR Pinterest beard, Austin cornhole aesthetic crucifix Pitchfork jean shorts fixie authentic. Synth High Life narwhal polaroid, ethical tilde sartorial +1 mustache. Art party selvage craft beer, mustache before they sold out Shoreditch trust fund pug crucifix.</p>
+<% @posts.each do |post| %>
+
+      <%= render "posts/post", post: post %>
+
+<br>
+<br>
+<br>
+<br>
+
+
+   <% end %>
+       

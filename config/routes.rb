@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :posts
+
   root 'pages#welcome'
 
   get "/about" => "pages#about"
