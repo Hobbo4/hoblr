@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :posts
+  resources :hearts, only: :create
 
   root 'pages#welcome'
 
