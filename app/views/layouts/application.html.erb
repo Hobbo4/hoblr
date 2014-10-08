@@ -12,9 +12,15 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-        <li class="active"><%= link_to "Home", root_url %></li>
-        <li><%= link_to "About", about_url %></li>
-          <li><%= link_to "Manage", posts_url %></li>
+          <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>        
+        <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_url %></li>
+            <% if user_signed_in? %>
+              <li class="<%= 'active' if current_page?(posts_path) %>"><%= link_to "Manage", posts_url %></li>
+              <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign in", new_user_session_path %></li>
+            <% end %>
+          
       </ul>
     
       <div class="page-header">
@@ -25,13 +31,8 @@
     
 
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      
-      <% flash.each do |name, msg| %>
-         <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-        <% end %>
-      
-       <%= yield %>  
+    <div class="col-md-6 col-md-offset-3">  
+        <%= yield %>  
     </div>
   </div>
 
