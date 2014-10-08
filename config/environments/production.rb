@@ -82,5 +82,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   # Note to set to actual host name
-  config.action_mailer.default_url_options = { host: => 'hobbolr.com' } 
+
 end
