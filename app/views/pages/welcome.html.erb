@@ -1,6 +1,7 @@
 <% @posts.reverse.each do |post| %>
 
       <%= render "posts/post", post: post %>
+      <%= image_tag post.image.url %>
 
 <br>
 <br>
