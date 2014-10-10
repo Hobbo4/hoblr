@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+   <meta name="viewport" content="initial-scale=1">
 </head>
   
 <body>
@@ -18,8 +19,6 @@
             <% if user_signed_in? %>
               <li class="<%= 'active' if current_page?(posts_path) %>"><%= link_to "Manage", posts_url %></li>
               <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-            <% else %>
-              <li><%= link_to "Sign in", new_user_session_path %></li>
             <% end %>
           
       </ul>
@@ -32,7 +31,11 @@
     
 
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">  
+    <div class="col-md-6 col-md-offset-3">
+  <% if notice.present? %>
+    <p class="alert alert-info"><%= notice %></p>
+  <% end %>
+    <p>
         <%= yield %>  
     </div>
   </div>
