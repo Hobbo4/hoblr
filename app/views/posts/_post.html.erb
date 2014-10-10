@@ -5,19 +5,16 @@
     <%= f.submit "❤", class: "btn btn-danger" %>
     <% end %>
   </div>  
-
-  <h2><%= link_to post.title, post %></h2>
-        
+  <h2><%= post.title %></h2>
 </p>
 
 <p>
-  <% if post.kind == "image" %>
-  
-  <%= image_tag post.content, style: "width: 100%" %>
-  <% else %>
   <%= simple_format post.content %>
-  <% end %>
+  <br>
+  <%= image_tag post.image.url, :class => "post_image" %>
 </p>
+  
+<br>
 
 <p class="text-muted">
   <small>

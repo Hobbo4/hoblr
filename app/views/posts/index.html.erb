@@ -14,7 +14,7 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= truncate(post.content, length: 300) %></td>
-        <td><%= image_tag post.image.url(:medium) %></td>
+        <td><%= image_tag post.image.url, :class => "style_image" %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
